@@ -1,0 +1,25 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  charset: utf8mb4
+  collation: utf8mb4_bin
+  encoding: utf8mb4
+
+ci: &ci
+  host: 127.0.0.1
+  username: root
+
+development:
+  <<: *default
+  database: djbulk_development
+
+test:
+  <<: *default
+  <% if ENV['CI'] %>
+  <<: *ci
+  <% end %>
+  database: djbulk_test
+
+production:
+  <<: *default
+  database: djbulk_production

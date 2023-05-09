@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+
+ci: &ci
+  host: localhost
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: djbulk_development
+
+test:
+  <<: *default
+  <% if ENV['CI'] %>
+  <<: *ci
+  <% end %>
+  database: djbulk_test
+
+production:
+  <<: *default
+  database: djbulk_production
