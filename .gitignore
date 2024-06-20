@@ -7,4 +7,5 @@
 /spec/**/db/*.sqlite3*
 /spec/**/log/*.log
 /spec/**/tmp/*
+/tmp/
 /vendor/
