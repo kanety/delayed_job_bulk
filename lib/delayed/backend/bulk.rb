@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'bulk/callbacks'
+require_relative 'bulk/enqueue_all'
 
 module Delayed
   module Backend
@@ -26,7 +27,7 @@ module Delayed
           end
         end
 
-        @jobs
+        @valid_jobs
       end
 
       private
