@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.0
+
+* Support perform_all_later for activejob >= 7.1.
+
 ## 1.0.1
 
 * Add `frozen_string_literal: true`.
