@@ -37,11 +37,20 @@ module Delayed
           Delayed::Backend::JobPreparer.new(
             ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper.new(active_job.serialize),
             queue: active_job.queue_name,
-            priority: active_job.priority
+            priority: active_job.priority,
+            run_at: build_run_at(active_job.scheduled_at)
           ).prepare
         ).tap do |job|
           job.created_at = current_time
           job.updated_at = current_time
+        end
+      end
+
+      def build_run_at(scheduled_at)
+        if scheduled_at.is_a?(Float)
+          Time.at(scheduled_at)
+        else
+          scheduled_at
         end
       end
 
