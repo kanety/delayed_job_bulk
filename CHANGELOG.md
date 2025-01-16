@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.1
+
+* Support run_at setting for activejob >= 7.0.
+
 ## 1.1.0
 
 * Support perform_all_later for activejob >= 7.1.
