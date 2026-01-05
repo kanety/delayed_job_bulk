@@ -4,9 +4,9 @@ Bulk insert many jobs at once for delayed_job.
 
 ## Dependencies
 
-* ruby 2.7+
-* activerecord 6.0+
-* delayed_job 4.1
+* ruby 3.0+
+* activerecord 7.0+
+* delayed_job 4.1+
 * delayed_job_active_record 4.1
 
 ## Installation
