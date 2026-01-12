@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.0
+
+* Drop support for ruby <= 2.7, rails <= 6.1.
+
 ## 1.1.1
 
 * Support run_at setting for activejob >= 7.0.
